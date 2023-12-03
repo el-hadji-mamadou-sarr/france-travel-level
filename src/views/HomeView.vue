@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import Map from '../components/Map.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <Map :width="1000" :height="900" />
   </main>
 </template>

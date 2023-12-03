@@ -20,7 +20,7 @@
       <div>
         <div class="menu-header">{{ dpt?.dep_name }}</div>
         <div
-          v-for="(item, i) in items"
+          v-for="(item, i) in items.reverse()"
           :key="i"
           :value="item.title"
           :class="`level-${item.value}`"
@@ -33,10 +33,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { reactive, watch } from 'vue'
+import { reactive, watch, computed } from 'vue'
 import type Departement from '@/utils/departement.interface'
 import { items } from '@/utils/constantes'
 import { userSelectedDepartements } from '@/stores/selectedDepartements'
+const emit = defineEmits(['close_actions_box'])
 const props = defineProps({
   isActionsBoxVisible: Boolean,
   mousePosition: Object,
@@ -62,6 +63,8 @@ watch(
 const handleSelect = (value: number) => {
   console.log('value', value)
   store.addToStore(props.dpt.dep_name, value)
+  document.getElementById(props.dpt?.num_dep)?.setAttribute('fill', items.reverse()[value].color)
+  emit('close_actions_box')
 }
 </script>
 

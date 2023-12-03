@@ -11,8 +11,12 @@ export const userSelectedDepartements = defineStore('departements', () => {
     }
     dptStore.value = [...(dptStore.value || []), { dpt_name, value }]
   }
-
-  return { dptStore, addToStore }
+  const score = computed(() => {
+    return dptStore.value.reduce((acc, dpt) => {
+      return acc + dpt.value
+    }, 0)
+  })
+  return { dptStore, addToStore, score }
 })
 
 interface store {

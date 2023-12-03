@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="isActionsBoxVisible"
-    :style="{ top: `${mousePosition.y + 10}px`, left: `${mousePosition.x - 100}px` }"
+    :style="{ top: `${mousePosition.y + 10}px`, left: `${mousePosition.x - 50}px` }"
     class="popover"
   >
     <!-- <v-list>

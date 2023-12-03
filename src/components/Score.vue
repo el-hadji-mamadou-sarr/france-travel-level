@@ -15,16 +15,35 @@
         <div>{{ item.value }}</div>
       </div>
     </div>
+    <a href="https://github.com/el-hadji-mamadou-sarr/france-travel-level" class="github">
+      Made with <span class="heart">❤</span> by El Hadji Mamadou SARR
+      <span class="heart">❤</span>
+      <GithubIcon />
+    </a>
   </div>
 </template>
 <script setup lang="ts">
 import { items } from '@/utils/constantes'
+import GithubIcon from '@/components/ui/GithubIcon.vue'
 const props = defineProps({
   score: Number
 })
 </script>
 
 <style scoped>
+.heart {
+  color: red;
+}
+.github {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+}
 .levels {
   padding: 1rem;
   border-radius: 10px;

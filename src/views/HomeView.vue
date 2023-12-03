@@ -20,6 +20,7 @@ watch(
   <main class="main">
     <Map :width="1000" :height="900" />
     <Score :score="score" />
+    
   </main>
 </template>
 

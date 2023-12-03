@@ -20,7 +20,7 @@
       <div>
         <div class="menu-header">{{ dpt?.dep_name }}</div>
         <div
-          v-for="(item, i) in items.reverse()"
+          v-for="(item, i) in items"
           :key="i"
           :value="item.title"
           :class="`level-${item.value}`"
@@ -63,7 +63,7 @@ watch(
 const handleSelect = (value: number) => {
   console.log('value', value)
   store.addToStore(props.dpt.dep_name, value)
-  document.getElementById(props.dpt?.num_dep)?.setAttribute('fill', items.reverse()[value].color)
+  document.getElementById(props.dpt?.num_dep)?.setAttribute('fill', items[5 - value].color)
   emit('close_actions_box')
 }
 </script>

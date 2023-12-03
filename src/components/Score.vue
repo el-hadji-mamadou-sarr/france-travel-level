@@ -5,7 +5,7 @@
       <span>{{ score }}</span>
     </div>
     <div class="levels">
-      <div v-for="(item, i) in items.reverse()" :key="i" :value="item.title" class="level-elt">
+      <div v-for="(item, i) in items" :key="i" :value="item.title" class="level-elt">
         <div class="level-title">
           <div :class="`level-box-${item.value}`"></div>
           <div>
